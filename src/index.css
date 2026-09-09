@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #000000;
+    --card-bg: #0B0B0E;
+    --card-border: #222228;
+    --text-primary: #FFFFFF;
+    --text-secondary: #A1A1AA;
+  }
+
+  .light {
+    --bg-main: #FFFFFF;
+    --card-bg: #F4F4F6;
+    --card-border: #E4E4E7;
+    --text-primary: #09090B;
+    --text-secondary: #71717A;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Subtle glowing borders */
+.glow-card-dark {
+  background: linear-gradient(180deg, #0E0E12 0%, #08080A 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glow-card-dark:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.glow-card-light {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4F4F6 100%);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.glow-card-light:hover {
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Glassmorphism */
+.glass-panel-dark {
+  background: rgba(11, 11, 14, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Mobile Frame Container for Desktop */
+.mobile-app-container {
+  max-width: 440px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .desktop-layout {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
